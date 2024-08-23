@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	//use the Dockerfile. More info: https://containers.dev/guide/dockerfile
+	"build": {"dockerfile":"Dockerfile"},
+
+	"customizations": {
+		"vscode":{
+			"extensions":[
+				//Code improvers
+				"ms-python.python", // basic things like syntax highlighting
+				"ms-python.vscode-pylance", // advanced features like type checking
+				"njpwerner.autodocstring", // thou shalt write good docstrings
+				"charliermarsh.ruff", // linting, formatting, and more
+				"KevinRose.vsc-python-indent", // Fix your whitespace woes
+				"ms-python.autopep8", // Force compliant styling
+				// Utilities
+					// "postman.postman-for-vscode", // HTTP requests from the IDE
+				// Project tools
+				"zeshuaro.vscode-python-poetry", // Package manager
+				"ms-toolsai.jupyter", // Obviously very useful
+				"eamodio.gitlens", // helps get more out of git
+				"gruntfuggly.todo-tree", // Creates a navigable todo list
+				// Quality of life assistants
+				"aaron-bond.better-comments", // Makes commented code more legible
+				"tamasfe.even-better-toml",
+				"mechatroner.rainbow-csv", // For better viewing of CSV data
+				// "shardulm94.trailing-spaces", // highlights trailing spaces for removal - actually somewhat distracting
+				// "foxundermoon.shell-format" // auto formats shell scripts
+				// vscode-infra.image-viewer // for viewing images
+				"usernamehw.errorlens", //Reveals errors before you run code
+				"meezilla.json", // Helps with json editing
+				"emmanuelbeziat.vscode-great-icons", //Better icons for file navigation
+				"yzhang.markdown-all-in-one" // Improves Markdown editing
+				],
+			"settings":{
+				"editor.wordWrap": "wordWrapColumn",
+				"editor.wordWrapColumn": 160,
+				"editor.rulers": [79,160],
+				"git.autofetch": true,
+				"files.autoSave":"afterDelay",
+				"files.autoSaveDelay": 300,
+				// "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+				"python.testing.pytestEnabled": true
+				// "better-comments.tags": [ # setting just one removes all defaults
+				// 	{
+				// 		"tag": "?",
+				// 		"color": "#1FFD30",
+				// 		"strikethrough": false,
+				// 		"underline": false,
+				// 		"backgroundColor": "transparent",
+				// 		"bold": false,
+				// 		"italic": false
+				// 	}]
+				}
+			}
+		},
+	"postCreateCommand": "poetry lock && poetry install" // install the dependencies
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

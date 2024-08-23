@@ -1,0 +1,3 @@
+[submodule "pyspa"]
+	path = pyspa
+	url = https://github.com/hybridlca/pyspa
